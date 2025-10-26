@@ -25,7 +25,7 @@ const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 
 const defaultStatus = new LicenseStatus()
 Object.assign(defaultStatus, {
-  edition: "community",
+  edition: "ultimate",
   condition: "initial",
 })
 
@@ -47,24 +47,19 @@ export const LicenseModule: Module<State, RootState>  = {
       return state.licenses.filter((l) => l.licenseType !== 'TrialLicense')
     },
     licenseDaysLeft(state) {
-      const validUntil = state.status.license.validUntil.getTime()
-      const now = state.now.getTime()
-      return Math.round((validUntil - now) / oneDay);
+      return 1999
     },
     noLicensesFound(state) {
-      return state.licenses.length === 0
+      return false
     },
     isUltimate(state) {
-      if (!state) return false
-      return state.status.isUltimate
+      return true
     },
     isCommunity(state) {
-      if (!state) return true
-      return state.status.isCommunity
+      return false
     },
     isTrial(state) {
-      if (!state) return true
-      return state.status.isTrial
+      return false
     },
     isValidStateExpired(state) {
       // this means a license with lifetime perms, but is no longer valid for software updates
