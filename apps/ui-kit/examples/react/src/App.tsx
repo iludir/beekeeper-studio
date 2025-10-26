@@ -14,8 +14,8 @@ function App() {
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
-        <a href="https://www.beekeeperstudio.io/" target="_blank">
-          <img src={bksLogo} className="logo bks" alt="Beekeeper Studio logo" />
+        <a href="" target="_blank">
+          <img src={bksLogo} className="logo bks" alt="ric Studio logo" />
         </a>
       </div>
       <h1>Vite + React + @beekeeperstudio/ui-kit</h1>

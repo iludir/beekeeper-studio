@@ -88,7 +88,7 @@ export function menuItems(actionHandler: IMenuActionHandler, settings: IGroupedU
     // help
     about: {
       id: 'about',
-      label: 'About Beekeeper Studio',
+      label: 'About ric Studio',
       click: actionHandler.about
     },
     devtools: {
@@ -99,7 +99,7 @@ export function menuItems(actionHandler: IMenuActionHandler, settings: IGroupedU
     },
     restart: {
       id: 'restart',
-      label: "Restart Beekeeper",
+      label: "Restart ric",
       click: actionHandler.restart
     },
     checkForUpdate: {
@@ -131,7 +131,7 @@ export function menuItems(actionHandler: IMenuActionHandler, settings: IGroupedU
     },
     addBeekeeper: {
       id: 'add-beekeeper',
-      label: "Add Beekeeper's Database",
+      label: "Add ric's Database",
       click: actionHandler.addBeekeeper
     },
     newTab: {
@@ -183,7 +183,7 @@ export function menuItems(actionHandler: IMenuActionHandler, settings: IGroupedU
       id: 'menu-secondary-sidebar',
       label: 'Toggle Secondary Sidebar',
       // accelerator: "Alt+S",
-      click: actionHandler.toggleSecondarySidebar,  
+      click: actionHandler.toggleSecondarySidebar,
       enabled: false,
     },
     themeToggle: {

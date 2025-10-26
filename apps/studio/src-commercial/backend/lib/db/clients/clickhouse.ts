@@ -153,7 +153,7 @@ export class ClickHouseClient extends BasicDatabaseClient<Result> {
       username: this.server.config.user,
       password: this.server.config.password,
       database: this.database.database,
-      application: "Beekeeper Studio",
+      application: "ric Studio",
       clickhouse_settings: {
         default_format: "JSONCompact",
       },

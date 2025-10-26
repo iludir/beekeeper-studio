@@ -78,7 +78,7 @@
       <div class="alert alert-danger" v-if="!plugin.loadable && plugin.installed">
         <i class="material-icons">error_outline</i>
         <div class="alert-body expand">
-          <span>This plugin requires version {{ plugin.minAppVersion }} or newer. Please upgrade your Beekeeper Studio or <a href="https://docs.beekeeperstudio.io/user_guide/plugins/#installing-a-specific-plugin-version">install</a> a compatible plugin version.</span>
+          <span>This plugin requires version {{ plugin.minAppVersion }} or newer. Please upgrade your ric Studio or <a href="https://docs.beekeeperstudio.io/user_guide/plugins/#installing-a-specific-plugin-version">install</a> a compatible plugin version.</span>
         </div>
       </div>
       <div class="alert alert-danger" v-if="plugin.error">

@@ -75,22 +75,22 @@ export default class NativeMenuActionHandlers implements IMenuActionHandler {
   }
   about(): void {
     app.setAboutPanelOptions({
-      applicationName: "Beekeeper Studio",
+      applicationName: "ric Studio",
       applicationVersion: app.getVersion(),
-      copyright: "Beekeeper Studio Team",
-      authors: ["Matthew Rathbone", "Gregory Garden", "All the wonderful Github contributors"],
-      website: "https://beekeeperstudio.io",
+      copyright: "ric",
+      authors: ["ric"],
+      website: "https://ric.gg",
       iconPath: getIcon()
     })
     app.showAboutPanel()
   }
 
   opendocs(): void {
-    shell.openExternal("https://docs.beekeeperstudio.io/")
+    // shell.openExternal("https://docs.beekeeperstudio.io/")
   }
 
   contactSupport(): void {
-    shell.openExternal("https://docs.beekeeperstudio.io/support/contact-support/")
+    // shell.openExternal("https://docs.beekeeperstudio.io/support/contact-support/")
   }
 
   checkForUpdates(_menuItem: Electron.MenuItem, _win: Electron.BrowserWindow): void {

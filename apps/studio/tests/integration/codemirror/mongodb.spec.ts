@@ -19,9 +19,9 @@ describe("MongoDB Completions", () => {
     container = await new GenericContainer('mongo:latest')
       .withName(containerName)
       .withEnvironment({
-        "MONGO_INITDB_ROOT_USERNAME": "beekeeper",
+        "MONGO_INITDB_ROOT_USERNAME": "ric",
         "MONGO_INITDB_ROOT_PASSWORD": "test",
-        "MONGO_INITDB_DATABASE": "bee"
+        "MONGO_INITDB_DATABASE": "ric"
       })
       .withExposedPorts(27017)
       .withStartupTimeout(dbtimeout)
@@ -41,7 +41,7 @@ describe("MongoDB Completions", () => {
     const host = container.getHost();
     const port = container.getMappedPort(27017);
 
-    const url = `mongodb://beekeeper:test@${host}:${port}/bee?authSource=admin`;
+    const url = `mongodb://ric:test@${host}:${port}/ric?authSource=admin`;
 
     // Create database configuration
     config = {
@@ -51,7 +51,7 @@ describe("MongoDB Completions", () => {
 
     // Create server and connection properly
     const server = createServer(config);
-    connection = server.createConnection("bee");
+    connection = server.createConnection("ric");
     await connection.connect();
 
     // Create some test collections in the database
@@ -93,14 +93,14 @@ describe("MongoDB Completions", () => {
     promptSymbol: "",
     list: (actualList) => {
       // Just check that we got completions back
-      return actualList.length > 0 && 
+      return actualList.length > 0 &&
         actualList.some(item => item.text === "db.getMongo") &&
         actualList.some(item => item.text === "db.getName");
     },
     from: Pos(0, 0),
     to: Pos(0, Infinity)
   });
-  
+
   testCompletions("should suggest collection methods", {
     value: "db.users.",
     cursor: Pos(0, 9),
@@ -108,7 +108,7 @@ describe("MongoDB Completions", () => {
     promptSymbol: "",
     list: (actualList) => {
       // Check we have completions and some expected methods
-      return actualList.length > 0 && 
+      return actualList.length > 0 &&
         actualList.some(item => item.text.includes("find")) &&
         actualList.some(item => item.text.includes("findOne"));
     },
@@ -124,7 +124,7 @@ describe("MongoDB Completions", () => {
     promptSymbol: "mongo> ",
     list: (actualList) => {
       // Check we have completions and some expected methods with prompt
-      return actualList.length > 0 && 
+      return actualList.length > 0 &&
         actualList.some(item => item.text.includes("find")) &&
         actualList.some(item => item.text.includes("findOne"));
     },
@@ -140,13 +140,13 @@ describe("MongoDB Completions", () => {
     promptSymbol: "mongo> ",
     list: (actualList) => {
       // Check we have completions and some expected cursor methods
-      return actualList.length > 0 && 
+      return actualList.length > 0 &&
         actualList.some(item => item.text.includes("toArray"));
     },
     from: Pos(0, 7),
     to: Pos(2, Infinity)
   });
-  
+
   // Test completions for database aggregation methods
   testCompletions("should suggest specific aggregation methods", {
     value: "db.users.aggregate().",
@@ -163,7 +163,7 @@ describe("MongoDB Completions", () => {
     from: Pos(0, 0),
     to: Pos(0, Infinity)
   });
-  
+
   // Using just a simple verification test since update operators might vary
   testCompletions("should suggest specific update operators", {
     value: "db.users.updateOne({}, {$",
@@ -177,7 +177,7 @@ describe("MongoDB Completions", () => {
     from: Pos(0, 0),
     to: Pos(0, Infinity)
   });
-  
+
   // Test completions for find with query operators
   testCompletions("should suggest specific query operators", {
     value: "db.users.find({age: {$",
@@ -195,7 +195,7 @@ describe("MongoDB Completions", () => {
     from: Pos(0, 0),
     to: Pos(0, Infinity)
   });
-  
+
   // Test specific MongoDB CRUD operation methods
   testCompletions("should suggest specific CRUD methods", {
     value: "db.users.",
@@ -216,7 +216,7 @@ describe("MongoDB Completions", () => {
     from: Pos(0, 0),
     to: Pos(0, Infinity)
   });
-  
+
   // Test with complex multi-line aggregation pipeline
   testCompletions("should provide specific completions for aggregation result", {
     value: "db.users.aggregate([\n  { $match: { age: { $gt: 25 } } },\n  { $group: { _id: \"$name\" } }\n]).",
@@ -232,7 +232,7 @@ describe("MongoDB Completions", () => {
     from: Pos(0, 0),
     to: Pos(3, Infinity)
   });
-  
+
   // Test index operations
   testCompletions("should suggest index operations", {
     value: "db.users.createIndex",

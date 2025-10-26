@@ -27,7 +27,7 @@ export class PostgresRestoreClient extends BaseCommandClient {
         controls: [
           {
             controlType: 'info',
-            settingDesc: '🧚 Hey! If you selected the plain text backup format, you should be able to run that file directly in Beekeeper to restore your backup!'
+            settingDesc: '🧚 Hey! If you selected the plain text backup format, you should be able to run that file directly in ric Studio to restore your backup!'
           },
           {
             controlType: 'checkbox',

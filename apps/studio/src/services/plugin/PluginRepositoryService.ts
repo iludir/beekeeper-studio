@@ -6,7 +6,7 @@ export default class PluginRepositoryService {
 
   constructor() {
     this.octokit = new Octokit({
-      userAgent: "Beekeeper Studio",
+      userAgent: "ric Studio",
       auth: process.env.GITHUB_TOKEN,
     });
   }

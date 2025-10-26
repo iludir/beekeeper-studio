@@ -1,12 +1,10 @@
 {
-  "name": "beekeeper-studio",
+  "name": "ric-studio",
   "version": "5.4.91337",
   "private": true,
   "description": "An easy-to use SQL query editor and database UI for Mac, Windows, and Linux",
   "author": {
-    "name": "Beekeeper Studio Team",
-    "email": "matthew@rathbonelabs.com",
-    "url": "https://beekeeperstudio.io"
+    "name": "ric"
   },
   "scripts": {
     "build:esbuild": "node ./esbuild.mjs",
@@ -228,7 +226,6 @@
     "> 1%",
     "last 2 versions"
   ],
-  "repository": "git@github.com:beekeeper-studio/beekeeper-studio.git",
   "resolutions": {
     "cpu-features": "file:./.yarn/packages/empty-package"
   }

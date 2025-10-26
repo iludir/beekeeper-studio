@@ -17,9 +17,9 @@
           <i class="material-icons">clear</i>
         </a>
         <div class="message">
-          This will make a copy of your .sql files and add them to your Beekeeper
+          This will make a copy of your .sql files and add them to your ric
           Studio saved queries. Any changes to the original .sql files will not be
-          reflected in Beekeeper Studio.
+          reflected in ric Studio.
         </div>
         <div class="file-picker-wrapper">
           <file-picker

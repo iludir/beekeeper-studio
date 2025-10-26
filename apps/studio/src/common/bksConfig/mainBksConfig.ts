@@ -132,14 +132,14 @@ export function loadConfig(file: ConfigFileName): IBksConfig | Partial<IBksConfi
     let systemConfigPath: string;
     switch (platformInfo.platform) {
       case "mac":
-        systemConfigPath = "/Library/Application Support/beekeeper-studio";
+        systemConfigPath = "/Library/Application Support/ric-studio";
       break;
       case "linux":
-        systemConfigPath = "/etc/beekeeper-studio";
+        systemConfigPath = "/etc/ric-studio";
       break;
       case "windows":
         const programData = process.env.ProgramData || "C:\\ProgramData";
-        systemConfigPath = path.join(programData, "beekeeper-studio");
+        systemConfigPath = path.join(programData, "ric-studio");
       break;
     }
     if (!systemConfigPath) {
