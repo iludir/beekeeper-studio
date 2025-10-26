@@ -30,7 +30,6 @@ jobs:
           OWNER: 'iludir'
           repo: 'beekeeper-studio'
         with:
-          github-token: ${{ secrets.GH_DEPLOY_TOKEN }}
           script: |
             const script = require('./.github/scripts/create_draft_release.js')
             await script({github, context, core}, process.env.OWNER, process.env.REPO, process.env.TAG_NAME)
@@ -299,7 +298,6 @@ jobs:
         env:
           RELEASE_ID: ${{needs.create_draft_release.outputs.id}}
         with:
-          github-token: ${{ secrets.GH_DEPLOY_TOKEN }}
           script: |
             const script = require('./.github/scripts/delete_latest_yml.js')
             const assetsUrl = '${{ needs.create_draft_release.outputs.assets_url }}'
@@ -326,7 +324,6 @@ jobs:
           ARCH: ${{ matrix.os.arch }}
           CHANNEL: ${{needs.identify_channel.outputs.channel}}
         with:
-          github-token: ${{ secrets.GH_DEPLOY_TOKEN }}
           script: |
             const fs = require('fs')
             const content = fs.readFileSync(`apps/studio/dist_electron/latest-mac.yml`, 'utf8')
@@ -362,7 +359,6 @@ jobs:
           INTEL_YML: ${{ needs.release.outputs.mac_x64_yml }}
           ARM_YML: ${{ needs.release.outputs.mac_arm64_yml }}
         with:
-          github-token: ${{ secrets.GH_DEPLOY_TOKEN }}
           script: |
             const fs = require('fs');
             const yaml = require('js-yaml');
@@ -398,7 +394,6 @@ jobs:
         env:
           RELEASE_ID: ${{ needs.create_draft_release.outputs.id }}
         with:
-          github-token: ${{ secrets.GH_DEPLOY_TOKEN }}
           script: |
             const fs = require('fs');
             const releaseId = process.env.RELEASE_ID;

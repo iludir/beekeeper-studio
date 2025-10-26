@@ -31,7 +31,6 @@ jobs:
       with:
         publish-dir: './site'
         production-branch: master  # or your default branch
-        github-token: ${{ secrets.GITHUB_TOKEN }}
         deploy-message: Deploy from GitHub Actions
       env:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
