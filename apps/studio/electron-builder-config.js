@@ -14,8 +14,8 @@ const certSubject = 'SERIALNUMBER=803010247, C=US, ST=Texas, L=Dallas, O="Rathbo
 
 
 module.exports = {
-  appId: "io.beekeeperstudio.desktop",
-  productName: "Beekeeper Studio",
+  appId: "gg.ric.desktop",
+  productName: "ric Studio",
   releaseInfo: {
     releaseNotesFile: "build/release-notes.md"
   },
@@ -154,7 +154,7 @@ module.exports = {
       'pacman'
     ],
     desktop: {
-      'StartupWMClass': 'beekeeper-studio'
+      'StartupWMClass': 'ric-studio'
     },
     publish: ['github']
   },
@@ -202,7 +202,7 @@ module.exports = {
     // FIXME: Add AppX/MSIX build back in once certificate issues resolved
     target: ['nsis', 'portable'],
     publish: ['github'],
-    sign: "./build/win/sign.js",
+    // sign: "./build/win/sign.js"
   },
   portable: {
     "artifactName": "${productName}-${version}-portable.exe",
@@ -211,8 +211,8 @@ module.exports = {
     oneClick: false
   },
   appx: {
-    applicationId: "beekeeperstudio",
+    applicationId: "ricstudio",
     publisher: certSubject.replaceAll('"', "&quot;"),
-    publisherDisplayName: "Beekeeper Studio"
+    publisherDisplayName: "ric Studio"
   }
 }
