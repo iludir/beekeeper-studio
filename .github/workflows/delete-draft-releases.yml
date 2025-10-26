@@ -15,8 +15,8 @@ jobs:
         with:
           script: |
             const { data: releases } = await github.rest.repos.listReleases({
-              owner: iludir,
-              repo: beekeeper-studio,
+              owner: 'iludir',
+              repo: 'beekeeper-studio',
             });
 
             const draftReleases = releases.filter(release => release.draft);
