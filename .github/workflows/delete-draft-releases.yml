@@ -15,8 +15,8 @@ jobs:
         with:
           script: |
             const { data: releases } = await github.rest.repos.listReleases({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
+              owner: iludir,
+              repo: beekeeper-studio,
             });
 
             const draftReleases = releases.filter(release => release.draft);
@@ -28,8 +28,8 @@ jobs:
 
             for (const release of draftReleases) {
               await github.rest.repos.deleteRelease({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
+                owner: 'iludir',
+                repo: 'beekeeper-studio',
                 release_id: release.id,
               });
               core.info(`Deleted draft release: ${release.name}`);
